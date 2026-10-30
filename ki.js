@@ -7,6 +7,7 @@ export const MODELLE = [
   { id: 'gemini-3.5-flash-lite', name: 'Gemini 3.5 Flash-Lite (schnell, ungenauer)' }
 ];
 export const FALLBACK = 'gemini-3.5-flash';
+export const LITE = 'gemini-3.5-flash-lite';
 const TIMEOUT_MS = 75000; // je Versuch; Gemini hängt bei Überlast manchmal minutenlang
 const FELDER = ['titel', 'kategorie', 'unterkategorie', 'zustand', 'preis', 'attribute', 'beschreibung', 'versand'];
 
@@ -103,7 +104,8 @@ export async function analysiere({ apiKey, modell, images, hinweise, plz, onStat
       thinkingConfig: { thinkingLevel: 'low' }
     }
   };
-  const plan = modell === FALLBACK ? [FALLBACK, FALLBACK] : [modell, modell, FALLBACK, FALLBACK];
+  // Plan: gewähltes Modell 2×, dann Ausweichmodell 2×, zuletzt Flash-Lite (ungenauer, aber meist verfügbar)
+  const plan = [...new Set([modell, FALLBACK])].flatMap(m => [m, m]).concat(modell === LITE ? [] : [LITE]);
   const fehler = []; let letzter;
   for (let i = 0; i < plan.length; i++) {
     const m = plan[i];
@@ -121,7 +123,7 @@ export async function analysiere({ apiKey, modell, images, hinweise, plz, onStat
       letzter = new KiFehler(zeit ? 'Die KI hat nicht rechtzeitig geantwortet (überlastet). Bitte gleich nochmal versuchen.' : 'Keine Verbindung zur KI (Internet prüfen).');
       fehler.push(`${m}: ${zeit ? `Zeitüberschreitung nach ${TIMEOUT_MS / 1000} s` : 'Netzwerkfehler'}`);
       // nach Zeitüberschreitung direkt zum Ausweichmodell
-      if (zeit && m !== FALLBACK) while (i + 1 < plan.length && plan[i + 1] !== FALLBACK) i++;
+      if (zeit) while (i + 1 < plan.length && plan[i + 1] === m) i++;
       continue;
     } finally { clearTimeout(timer); }
     const ms = Math.round(performance.now() - t0);
@@ -131,8 +133,8 @@ export async function analysiere({ apiKey, modell, images, hinweise, plz, onStat
       if (res.status === 400 && /API key/i.test(msg)) throw new KiFehler('Der API-Key ist ungültig. Bitte in den Einstellungen prüfen.', 400);
       if (res.status === 403) throw new KiFehler('Der API-Key hat keinen Zugriff (403). Ist die Gemini API für den Key freigeschaltet?', 403);
       letzter = new KiFehler(res.status === 429 ? 'Kontingent des Keys erschöpft (429). Später erneut versuchen.' : `KI-Fehler HTTP ${res.status}: ${msg}`, res.status);
-      if (res.status === 429 && m !== FALLBACK) { while (i + 1 < plan.length && plan[i + 1] !== FALLBACK) i++; continue; }
-      if ([429, 500, 503, 504].includes(res.status)) { await new Promise(r => setTimeout(r, 1500 * (i + 1))); continue; }
+      if (res.status === 429) { while (i + 1 < plan.length && plan[i + 1] === m) i++; continue; }  // Kontingent weg: nächstes Modell
+      if ([429, 500, 503, 504].includes(res.status)) { await new Promise(r => setTimeout(r, 2500 * (i + 1))); continue; }
       throw letzter;
     }
     const data = JSON.parse(txt);
@@ -140,7 +142,7 @@ export async function analysiere({ apiKey, modell, images, hinweise, plz, onStat
     const text = ((cand && cand.content && cand.content.parts) || []).filter(p => p.text && !p.thought).map(p => p.text).join('');
     let parsed;
     try { parsed = JSON.parse(text); } catch { fehler.push(`${m}: ungültiges JSON (${cand && cand.finishReason})`); letzter = new KiFehler('Antwort der KI war unvollständig.'); continue; }
-    return { ergebnis: nachbearbeiten(parsed), meta: { modell: data.modelVersion || m, ms, versuche: i + 1, fehler, tokens: data.usageMetadata || {} } };
+    return { ergebnis: nachbearbeiten(parsed), meta: { modell: data.modelVersion || m, angefragt: m, ms, versuche: i + 1, fehler, tokens: data.usageMetadata || {} } };
   }
   throw letzter || new KiFehler('KI nicht erreichbar.');
 }

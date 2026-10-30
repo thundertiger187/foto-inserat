@@ -1,0 +1,88 @@
+{
+  "fall": {
+    "id": "foto2_lichtmaschine_regler",
+    "dateien": [
+      "testfotos/foto2_lichtmaschine_regler.jpg"
+    ],
+    "plz": "40699 Erkrath",
+    "hinweise": ""
+  },
+  "gesamt_ms_im_browser": 84513,
+  "ergebnis": {
+    "mehrere_artikel": false,
+    "artikel_hinweis": "",
+    "titel": "Bosch Lichtmaschinenregler 1 197 311 021 EL 14V 4C Regler",
+    "kategorie": "Auto, Rad & Boot",
+    "unterkategorie": "Autoteile & Reifen",
+    "zustand": "In Ordnung",
+    "preis": 10,
+    "preisart": "VB",
+    "preis_min": 5,
+    "preis_max": 15,
+    "preis_begruendung": "Gebrauchte Bosch Lichtmaschinenregler werden je nach Zustand meist zwischen 5 und 15 Euro gehandelt.",
+    "attribute": [
+      {
+        "name": "Marke",
+        "wert": "Bosch",
+        "unsicher": false
+      },
+      {
+        "name": "Herstellernummer",
+        "wert": "1 197 311 021",
+        "unsicher": false
+      },
+      {
+        "name": "Teilebereich Elektrik & Zündung",
+        "wert": "Lichtmaschinenregler / Spannungswandler",
+        "unsicher": false
+      },
+      {
+        "name": "Spannung",
+        "wert": "14V",
+        "unsicher": false
+      }
+    ],
+    "beschreibung": "Zum Verkauf steht ein gebrauchter Lichtmaschinenregler von Bosch mit der Teilenummer 1 197 311 021 (EL 14V 4C, Made in Spain).\n\nDer Artikel weist deutliche Gebrauchsspuren, Staub und Verschmutzungen auf. Die Funktion konnte nicht erneut getestet werden [bitte ergänzen: Funktionalität vor dem Ausbau bzw. aktuellen Funktionsstatus angeben].\n\nAbholung in 40699 Erkrath. Ein Versand ist ebenfalls möglich.\n\nPrivatverkauf, keine Garantie oder Rücknahme.",
+    "versand": "Versand möglich",
+    "versand_hinweis": "Versand als BWA/Großbrief oder kleines Päckchen ca. 2,50–4,50 € möglich.",
+    "unsicher": [
+      {
+        "feld": "zustand",
+        "grund": "Elektrische Funktion kann anhand des Fotos nicht geprüft werden."
+      },
+      {
+        "feld": "preis",
+        "grund": "Preis ist abhängig vom genauen Abnutzungsgrad der Kohlebürsten und der Funktionsfähigkeit."
+      }
+    ],
+    "foto_tipps": [
+      "Ein Foto der Unterseite/Rückseite machen, um den Zustand der Kohlebürsten zu zeigen.",
+      "Artikel vor dem Fotografieren etwas reinigen, um den optischen Zustand zu verbessern."
+    ]
+  },
+  "meta": {
+    "modell": "gemini-3.6-flash",
+    "ms": 4460,
+    "versuche": 3,
+    "fehler": [
+      "gemini-3.8-flash: HTTP 503",
+      "gemini-3.8-flash: Zeitüberschreitung nach 75 s"
+    ],
+    "tokens": {
+      "promptTokenCount": 2389,
+      "candidatesTokenCount": 662,
+      "totalTokenCount": 3051,
+      "promptTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1064
+        },
+        {
+          "modality": "TEXT",
+          "tokenCount": 1325
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  }
+}

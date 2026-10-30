@@ -72,7 +72,7 @@ try {
     // Kopieren testen
     await page.click('[data-feld="titel"] .btn.mini');
     const clip = await page.evaluate(() => navigator.clipboard.readText()).catch(() => null);
-    bericht.faelle.push({ id: f.id, ms, modell: a.meta.modell, versuche: a.meta.versuche, api_fehler: a.meta.fehler, tokens: a.meta.tokens,
+    bericht.faelle.push({ id: f.id, ms, modell: a.meta.modell, angefragt: a.meta.angefragt, versuche: a.meta.versuche, api_fehler: a.meta.fehler, tokens: a.meta.tokens,
       titel: a.ergebnis.titel, titel_laenge: a.ergebnis.titel.length, kategorie: `${a.ergebnis.kategorie} > ${a.ergebnis.unterkategorie}`,
       zustand: a.ergebnis.zustand, preis: `${a.ergebnis.preis} € ${a.ergebnis.preisart}`, spanne: `${a.ergebnis.preis_min}–${a.ergebnis.preis_max} €`,
       versand: a.ergebnis.versand, mehrere_artikel: a.ergebnis.mehrere_artikel, artikel_hinweis: a.ergebnis.artikel_hinweis,

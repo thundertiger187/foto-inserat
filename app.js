@@ -1,7 +1,7 @@
 import { KATEGORIEN, ZUSTAENDE, PREISARTEN, VERSAND, TITEL_MAX, BESCHREIBUNG_MAX, AUFGEBEN_URL } from './kategorien.js';
 import { analysiere, MODELLE } from './ki.js';
 
-const VERSION = '1.0.1';
+const VERSION = '1.0.2';
 const MAX_FOTOS = 10, MAX_KANTE = 1600, QUALITAET = 0.85, MAX_VERLAUF = 20;
 const $ = s => document.querySelector(s);
 const el = (tag, attrs = {}, ...kids) => {
@@ -113,7 +113,8 @@ $('#btn-erstellen').addEventListener('click', async () => {
     renderErgebnis(); zeige('ergebnis');
   } catch (e) {
     zeige('start');
-    $('#v-start').prepend(el('div', { class: 'banner err', text: `⚠️ ${e.message}` }));
+    document.querySelectorAll('#v-start .banner.err').forEach(b => b.remove());
+    $('#v-start').prepend(el('div', { class: 'banner err', text: `⚠️ ${e.message} Deine Fotos und Hinweise sind noch da – einfach erneut auf „Inserat erstellen“ tippen.` }));
     if (e.status === 400 || e.status === 403) setTimeout(() => zeige('einstellungen'), 1500);
   } finally { clearInterval(uhr); $('#laden-zeit').textContent = ''; }
 });
