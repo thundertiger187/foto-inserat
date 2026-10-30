@@ -1,33 +1,65 @@
 {
-  "zeit": "2026-10-30T12:04:54.038Z",
+  "zeit": "2026-10-30T12:10:03.550Z",
   "basis": "https://thundertiger187.github.io/foto-inserat/",
   "faelle": [
     {
       "id": "foto1_controller",
-      "fehler": "⚠️ KI-Fehler HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-      "ms": 53220
-    },
-    {
-      "id": "foto2_lichtmaschine_regler",
-      "ms": 84513,
+      "ms": 90956,
       "modell": "gemini-3.6-flash",
-      "versuche": 3,
+      "angefragt": "gemini-3.5-flash",
+      "versuche": 4,
       "api_fehler": [
-        "gemini-3.8-flash: HTTP 503",
-        "gemini-3.8-flash: Zeitüberschreitung nach 75 s"
+        "gemini-3.8-flash: Zeitüberschreitung nach 75 s",
+        "gemini-3.5-flash: HTTP 503"
       ],
       "tokens": {
-        "promptTokenCount": 2389,
-        "candidatesTokenCount": 662,
-        "totalTokenCount": 3051,
+        "promptTokenCount": 2438,
+        "candidatesTokenCount": 562,
+        "totalTokenCount": 3000,
         "promptTokensDetails": [
           {
             "modality": "IMAGE",
-            "tokenCount": 1064
+            "tokenCount": 1102
           },
           {
             "modality": "TEXT",
+            "tokenCount": 1336
+          }
+        ],
+        "serviceTier": "standard"
+      },
+      "titel": "Xbox 360 Controller Schwarz USB Kabel gebunden PC",
+      "titel_laenge": 49,
+      "kategorie": "Elektronik > PC-Zubehör & Software",
+      "zustand": "Sehr Gut",
+      "preis": "15 € VB",
+      "spanne": "10–20 €",
+      "versand": "Versand möglich",
+      "mehrere_artikel": false,
+      "artikel_hinweis": "",
+      "unsicher": [],
+      "privat_hinweis": true,
+      "kopieren_titel_ok": true
+    },
+    {
+      "id": "foto2_lichtmaschine_regler",
+      "ms": 60329,
+      "modell": "gemini-3.8-flash",
+      "angefragt": "gemini-3.8-flash",
+      "versuche": 1,
+      "api_fehler": [],
+      "tokens": {
+        "promptTokenCount": 2389,
+        "candidatesTokenCount": 711,
+        "totalTokenCount": 3100,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
             "tokenCount": 1325
+          },
+          {
+            "modality": "IMAGE",
+            "tokenCount": 1064
           }
         ],
         "serviceTier": "standard"
@@ -50,8 +82,43 @@
     },
     {
       "id": "foto3_bonsaischalen",
-      "fehler": "⚠️ KI-Fehler HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-      "ms": 93100
+      "ms": 79974,
+      "modell": "gemini-3.6-flash",
+      "angefragt": "gemini-3.5-flash",
+      "versuche": 3,
+      "api_fehler": [
+        "gemini-3.8-flash: Zeitüberschreitung nach 75 s"
+      ],
+      "tokens": {
+        "promptTokenCount": 2402,
+        "candidatesTokenCount": 609,
+        "totalTokenCount": 3011,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1329
+          },
+          {
+            "modality": "IMAGE",
+            "tokenCount": 1073
+          }
+        ],
+        "serviceTier": "standard"
+      },
+      "titel": "Bonsaischalen Set 7 Stück Keramik Tontöpfe Bonsai Schalen",
+      "titel_laenge": 57,
+      "kategorie": "Haus & Garten > Gartenzubehör & Pflanzen",
+      "zustand": "Gut",
+      "preis": "45 € VB",
+      "spanne": "35–60 €",
+      "versand": "Versand möglich",
+      "mehrere_artikel": true,
+      "artikel_hinweis": "Es sind 7 verschiedene Bonsaischalen zu sehen. Empfehlung: Als Konvolut/Set anbieten oder einzeln mit Preisangabe pro Schale.",
+      "unsicher": [
+        "preis"
+      ],
+      "privat_hinweis": true,
+      "kopieren_titel_ok": true
     }
   ],
   "checks": {
@@ -65,20 +132,14 @@
       ],
       "bytes": 205540
     },
-    "verlauf_eintraege": 1,
+    "verlauf_eintraege": 3,
     "key_in_ergebnisdateien": false
   },
   "browser_logs": [
     "verbose: [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o",
     "verbose: [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o",
     "error: Failed to load resource: the server responded with a status of 503 ()",
-    "error: Failed to load resource: the server responded with a status of 503 ()",
-    "error: Failed to load resource: the server responded with a status of 503 ()",
-    "error: Failed to load resource: the server responded with a status of 503 ()",
     "verbose: [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o",
-    "error: Failed to load resource: the server responded with a status of 503 ()",
-    "verbose: [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o",
-    "error: Failed to load resource: the server responded with a status of 503 ()",
-    "error: Failed to load resource: the server responded with a status of 503 ()"
+    "verbose: [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o"
   ]
 }

@@ -1,0 +1,85 @@
+{
+  "fall": {
+    "id": "foto1_controller",
+    "dateien": [
+      "testfotos/foto1_controller.jpg"
+    ],
+    "plz": "40699 Erkrath",
+    "hinweise": "funktioniert einwandfrei, kabelgebunden, kaum benutzt"
+  },
+  "gesamt_ms_im_browser": 90956,
+  "ergebnis": {
+    "mehrere_artikel": false,
+    "artikel_hinweis": "",
+    "titel": "Xbox 360 Controller Schwarz USB Kabel gebunden PC",
+    "kategorie": "Elektronik",
+    "unterkategorie": "PC-Zubehör & Software",
+    "zustand": "Sehr Gut",
+    "preis": 15,
+    "preisart": "VB",
+    "preis_min": 10,
+    "preis_max": 20,
+    "preis_begruendung": "Gebrauchte original Xbox 360 Controller in gutem Zustand werden üblicherweise zwischen 10 und 20 Euro gehandelt.",
+    "attribute": [
+      {
+        "name": "Marke",
+        "wert": "Microsoft",
+        "unsicher": false
+      },
+      {
+        "name": "Produktart",
+        "wert": "Gamepad / Controller",
+        "unsicher": false
+      },
+      {
+        "name": "Farbe",
+        "wert": "Schwarz",
+        "unsicher": false
+      },
+      {
+        "name": "Kompatibilität",
+        "wert": "Xbox 360 / PC",
+        "unsicher": false
+      },
+      {
+        "name": "Konnektivität",
+        "wert": "Kabelgebunden",
+        "unsicher": false
+      }
+    ],
+    "beschreibung": "Verkaufe einen gebrauchten, originalen Xbox 360 Controller in Schwarz.\n\nDer Controller wurde kaum benutzt, befindet sich in einem sehr guten optischen Zustand und funktioniert einwandfrei. Ideal für die Xbox 360 oder den PC.\n\nLieferumfang:\n- Controller wie abgebildet\n\nAbholung in 40699 Erkrath bevorzugt. Versand ist bei Kostenübernahme ebenfalls möglich.\n\nPrivatverkauf, keine Garantie oder Rücknahme.",
+    "versand": "Versand möglich",
+    "versand_hinweis": "Versand als Paket/Päckchen möglich (ca. 4,50 - 5,50 €) oder Abholung in 40699 Erkrath.",
+    "unsicher": [],
+    "foto_tipps": [
+      "Ein Foto vom Kabel/Stecker und der Unterseite/Rückseite machen.",
+      "Aufnahme bei hellem Tageslicht für bessere Details."
+    ]
+  },
+  "meta": {
+    "modell": "gemini-3.6-flash",
+    "angefragt": "gemini-3.5-flash",
+    "ms": 4098,
+    "versuche": 4,
+    "fehler": [
+      "gemini-3.8-flash: Zeitüberschreitung nach 75 s",
+      "gemini-3.5-flash: HTTP 503"
+    ],
+    "tokens": {
+      "promptTokenCount": 2438,
+      "candidatesTokenCount": 562,
+      "totalTokenCount": 3000,
+      "promptTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1102
+        },
+        {
+          "modality": "TEXT",
+          "tokenCount": 1336
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  }
+}

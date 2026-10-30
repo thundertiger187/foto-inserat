@@ -106,11 +106,11 @@ export async function analysiere({ apiKey, modell, images, hinweise, plz, onStat
   };
   // Plan: gewähltes Modell 2×, dann Ausweichmodell 2×, zuletzt Flash-Lite (ungenauer, aber meist verfügbar)
   const plan = [...new Set([modell, FALLBACK])].flatMap(m => [m, m]).concat(modell === LITE ? [] : [LITE]);
-  const fehler = []; let letzter;
+  const fehler = []; let letzter, anfragen = 0;
   for (let i = 0; i < plan.length; i++) {
     const m = plan[i];
     onStatus(i === 0 ? `KI analysiert (${m}) …` : `Neuer Versuch mit ${m} …`);
-    const t0 = performance.now();
+    const t0 = performance.now(); anfragen++;
     let res, txt;
     const ac = new AbortController(), timer = setTimeout(() => ac.abort(), TIMEOUT_MS);
     try {
@@ -142,7 +142,7 @@ export async function analysiere({ apiKey, modell, images, hinweise, plz, onStat
     const text = ((cand && cand.content && cand.content.parts) || []).filter(p => p.text && !p.thought).map(p => p.text).join('');
     let parsed;
     try { parsed = JSON.parse(text); } catch { fehler.push(`${m}: ungültiges JSON (${cand && cand.finishReason})`); letzter = new KiFehler('Antwort der KI war unvollständig.'); continue; }
-    return { ergebnis: nachbearbeiten(parsed), meta: { modell: data.modelVersion || m, angefragt: m, ms, versuche: i + 1, fehler, tokens: data.usageMetadata || {} } };
+    return { ergebnis: nachbearbeiten(parsed), meta: { modell: data.modelVersion || m, angefragt: m, ms, versuche: anfragen, fehler, tokens: data.usageMetadata || {} } };
   }
   throw letzter || new KiFehler('KI nicht erreichbar.');
 }

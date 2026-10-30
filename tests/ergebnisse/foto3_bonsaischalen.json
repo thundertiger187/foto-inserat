@@ -1,0 +1,79 @@
+{
+  "fall": {
+    "id": "foto3_bonsaischalen",
+    "dateien": [
+      "testfotos/foto3_bonsaischalen.jpg"
+    ],
+    "plz": "40699 Erkrath",
+    "hinweise": "gebraucht, gereinigt"
+  },
+  "gesamt_ms_im_browser": 79974,
+  "ergebnis": {
+    "mehrere_artikel": true,
+    "artikel_hinweis": "Es sind 7 verschiedene Bonsaischalen zu sehen. Empfehlung: Als Konvolut/Set anbieten oder einzeln mit Preisangabe pro Schale.",
+    "titel": "Bonsaischalen Set 7 Stück Keramik Tontöpfe Bonsai Schalen",
+    "kategorie": "Haus & Garten",
+    "unterkategorie": "Gartenzubehör & Pflanzen",
+    "zustand": "Gut",
+    "preis": 45,
+    "preisart": "VB",
+    "preis_min": 35,
+    "preis_max": 60,
+    "preis_begruendung": "Mehrere Bonsaischalen in unterschiedlichen Größen und Formen als Komplettset.",
+    "attribute": [
+      {
+        "name": "Produktart",
+        "wert": "Bonsaischale",
+        "unsicher": false
+      },
+      {
+        "name": "Material",
+        "wert": "Keramik / Ton",
+        "unsicher": false
+      },
+      {
+        "name": "Anzahl",
+        "wert": "7 Stück",
+        "unsicher": false
+      }
+    ],
+    "beschreibung": "Verkaufe ein Set aus 7 verschiedenen Bonsaischalen in unterschiedlichen Formen (u.a. oval, rechteckig, sechseckig) und Farben (braun, terracotta, blau und grün glasiert).\n\nAlle Schalen besitzen Abflusslöcher im Boden, teils sind bereits Abdeckgitter/Draht vorhanden.\n\nZustand:\nGebraucht, aber gereinigt. Normale Gebrauchsspuren und leichte Kalk- oder Erdablagerungen vorhanden (siehe Fotos).\n\nAbholung in 40699 Erkrath bevorzugt. Versand ist auf Risiko des Käufers ebenfalls möglich.\n\nPrivatverkauf, keine Garantie oder Rücknahme.",
+    "versand": "Versand möglich",
+    "versand_hinweis": "Abholung in 40699 Erkrath bevorzugt wegen Bruchsicherheit, Versand gut verpackt im Paket möglich.",
+    "unsicher": [
+      {
+        "feld": "preis",
+        "grund": "Preise hängen stark von der genauen Herkunft/Töpfermarke der Schalen ab."
+      }
+    ],
+    "foto_tipps": [
+      "Fotos von den Unterseiten/Stempeln machen, falls Herstellermarken vorhanden sind.",
+      "Einzelaufnahmen der Schalen mit Maßen (Länge x Breite x Höhe) hinzufügen."
+    ]
+  },
+  "meta": {
+    "modell": "gemini-3.6-flash",
+    "angefragt": "gemini-3.5-flash",
+    "ms": 4828,
+    "versuche": 3,
+    "fehler": [
+      "gemini-3.8-flash: Zeitüberschreitung nach 75 s"
+    ],
+    "tokens": {
+      "promptTokenCount": 2402,
+      "candidatesTokenCount": 609,
+      "totalTokenCount": 3011,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1329
+        },
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1073
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  }
+}
