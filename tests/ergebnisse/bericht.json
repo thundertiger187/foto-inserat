@@ -1,0 +1,141 @@
+{
+  "zeit": "2026-10-30T11:53:51.032Z",
+  "basis": "http://127.0.0.1:8787/",
+  "faelle": [
+    {
+      "id": "foto1_controller",
+      "ms": 91517,
+      "modell": "gemini-3.8-flash",
+      "versuche": 1,
+      "api_fehler": [],
+      "tokens": {
+        "promptTokenCount": 2438,
+        "candidatesTokenCount": 549,
+        "totalTokenCount": 2987,
+        "promptTokensDetails": [
+          {
+            "modality": "IMAGE",
+            "tokenCount": 1102
+          },
+          {
+            "modality": "TEXT",
+            "tokenCount": 1336
+          }
+        ],
+        "serviceTier": "standard"
+      },
+      "titel": "Microsoft Xbox 360 Controller Schwarz Gamepad",
+      "titel_laenge": 45,
+      "kategorie": "Elektronik > Konsolen",
+      "zustand": "Sehr Gut",
+      "preis": "18 € VB",
+      "spanne": "15–25 €",
+      "versand": "Versand möglich",
+      "mehrere_artikel": false,
+      "artikel_hinweis": "",
+      "unsicher": [
+        "attribute"
+      ],
+      "privat_hinweis": true,
+      "kopieren_titel_ok": true
+    },
+    {
+      "id": "foto2_lichtmaschine_regler",
+      "ms": 31585,
+      "modell": "gemini-3.8-flash",
+      "versuche": 1,
+      "api_fehler": [],
+      "tokens": {
+        "promptTokenCount": 2389,
+        "candidatesTokenCount": 757,
+        "totalTokenCount": 3146,
+        "promptTokensDetails": [
+          {
+            "modality": "IMAGE",
+            "tokenCount": 1064
+          },
+          {
+            "modality": "TEXT",
+            "tokenCount": 1325
+          }
+        ],
+        "serviceTier": "standard"
+      },
+      "titel": "Bosch Lichtmaschinenregler 1 197 311 021 EL 14V 4C Regler",
+      "titel_laenge": 57,
+      "kategorie": "Auto, Rad & Boot > Autoteile & Reifen",
+      "zustand": "In Ordnung",
+      "preis": "10 € VB",
+      "spanne": "5–15 €",
+      "versand": "Versand möglich",
+      "mehrere_artikel": false,
+      "artikel_hinweis": "",
+      "unsicher": [
+        "zustand",
+        "preis"
+      ],
+      "privat_hinweis": true,
+      "kopieren_titel_ok": true
+    },
+    {
+      "id": "foto3_bonsaischalen",
+      "ms": 49228,
+      "modell": "gemini-3.8-flash",
+      "versuche": 2,
+      "api_fehler": [
+        "gemini-3.8-flash: HTTP 503"
+      ],
+      "tokens": {
+        "promptTokenCount": 2402,
+        "candidatesTokenCount": 722,
+        "totalTokenCount": 3124,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1329
+          },
+          {
+            "modality": "IMAGE",
+            "tokenCount": 1073
+          }
+        ],
+        "serviceTier": "standard"
+      },
+      "titel": "Bonsaischalen 7 Stück Set Keramik Ton Pflanzschalen",
+      "titel_laenge": 51,
+      "kategorie": "Haus & Garten > Gartenzubehör & Pflanzen",
+      "zustand": "Gut",
+      "preis": "35 € VB",
+      "spanne": "25–50 €",
+      "versand": "Versand möglich",
+      "mehrere_artikel": true,
+      "artikel_hinweis": "7 Bonsaischalen in unterschiedlichen Formen, Farben und Größen. Verkauf als Gesamtpaket oder einzeln möglich; hier als Set angeboten.",
+      "unsicher": [
+        "preis"
+      ],
+      "privat_hinweis": true,
+      "kopieren_titel_ok": true
+    }
+  ],
+  "checks": {
+    "kein_key_banner": true,
+    "exif": {
+      "exif_marker": false,
+      "gps_text": false,
+      "groesse": [
+        1600,
+        1209
+      ],
+      "bytes": 205540
+    },
+    "verlauf_eintraege": 3,
+    "key_in_ergebnisdateien": false
+  },
+  "browser_logs": [
+    "verbose: [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o",
+    "verbose: [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o",
+    "verbose: [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o",
+    "verbose: [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o",
+    "error: Failed to load resource: the server responded with a status of 503 ()"
+  ]
+}

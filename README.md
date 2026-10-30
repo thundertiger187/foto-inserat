@@ -1,0 +1,1 @@
+# Foto-Inserat (README folgt)

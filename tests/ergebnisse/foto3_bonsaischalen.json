@@ -1,0 +1,78 @@
+{
+  "fall": {
+    "id": "foto3_bonsaischalen",
+    "dateien": [
+      "testfotos/foto3_bonsaischalen.jpg"
+    ],
+    "plz": "40699 Erkrath",
+    "hinweise": "gebraucht, gereinigt"
+  },
+  "gesamt_ms_im_browser": 49228,
+  "ergebnis": {
+    "mehrere_artikel": true,
+    "artikel_hinweis": "7 Bonsaischalen in unterschiedlichen Formen, Farben und Größen. Verkauf als Gesamtpaket oder einzeln möglich; hier als Set angeboten.",
+    "titel": "Bonsaischalen 7 Stück Set Keramik Ton Pflanzschalen",
+    "kategorie": "Haus & Garten",
+    "unterkategorie": "Gartenzubehör & Pflanzen",
+    "zustand": "Gut",
+    "preis": 35,
+    "preisart": "VB",
+    "preis_min": 25,
+    "preis_max": 50,
+    "preis_begruendung": "Beliebtes Konvolut aus 7 verschiedenen Bonsaischalen, teils unglasiert und teils glasiert, mit sichtbaren Gebrauchsspuren.",
+    "attribute": [
+      {
+        "name": "Art",
+        "wert": "Pflanzkübel & Blumentöpfe",
+        "unsicher": false
+      },
+      {
+        "name": "Material",
+        "wert": "Keramik / Ton",
+        "unsicher": false
+      },
+      {
+        "name": "Anzahl",
+        "wert": "7",
+        "unsicher": false
+      }
+    ],
+    "beschreibung": "Verkaufe ein Set aus 7 verschiedenen Bonsaischalen in unterschiedlichen Formen und Größen:\n\n- 1x sechseckige Tonschale (unglasiert)\n- 1x runde Schale (braun unglasiert)\n- 1x flache ovale Schale (groß, terrakottafarben unglasiert)\n- 1x ovale Schale mit grün/türkiser Glasur\n- 1x ovale braune Schale\n- 1x rechteckige braune Schale (glasiert)\n- 1x kleine rechteckige Schale (blau glasiert)\n\nAlle Schalen verfügen über Wasserabzugslöcher, teilweise sind bereits Abdeckgitter bzw. Befestigungsdrähte eingesetzt.\n\nZustand: Gebraucht, gereinigt. Übliche Gebrauchsspuren wie leichte Kalkränder oder Verfärbungen vorhanden, keine groben Risse sichtbar.\n\nAbholung in 40699 Erkrath bevorzugt, gut verpackter Versand gegen Kostenübernahme möglich.\n\nPrivatverkauf, keine Garantie oder Rücknahme.",
+    "versand": "Versand möglich",
+    "versand_hinweis": "Versand als Paket (gut gepolstert) oder Abholung in 40699 Erkrath.",
+    "unsicher": [
+      {
+        "feld": "preis",
+        "grund": "Preise für Bonsaischalen variieren stark je nach Hersteller/Herkunft (z.B. Yixing oder Massenware)."
+      }
+    ],
+    "foto_tipps": [
+      "Unterseiten/Stempel fotografieren, falls Herstellersiegel vorhanden sind.",
+      "Maße der einzelnen Schalen per Foto mit Zollstock zeigen."
+    ]
+  },
+  "meta": {
+    "modell": "gemini-3.8-flash",
+    "ms": 43513,
+    "versuche": 2,
+    "fehler": [
+      "gemini-3.8-flash: HTTP 503"
+    ],
+    "tokens": {
+      "promptTokenCount": 2402,
+      "candidatesTokenCount": 722,
+      "totalTokenCount": 3124,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1329
+        },
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1073
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  }
+}

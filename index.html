@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f766e">
+<meta name="description" content="Artikel fotografieren, KI-Entwurf für ein Kleinanzeigen-Inserat erhalten, prüfen und kopieren.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Foto-Inserat">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://generativelanguage.googleapis.com; img-src 'self' blob: data:; style-src 'self'; script-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'">
+<title>Foto-Inserat – Kleinanzeigen-Entwurf per Foto</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <button class="icon-btn" id="btn-home" aria-label="Start">📷</button>
+  <h1>Foto-Inserat</h1>
+  <button class="icon-btn" id="btn-verlauf" aria-label="Verlauf">🕘</button>
+  <button class="icon-btn" id="btn-einstellungen" aria-label="Einstellungen">⚙️</button>
+</header>
+
+<main>
+<!-- START -->
+<section id="v-start" class="view">
+  <div class="banner warn" id="kein-key" hidden>
+    <b>Noch kein Gemini-API-Key.</b> Einmalig in den <a href="#" data-go="einstellungen">Einstellungen</a> eintragen – kostenlos erhältlich.
+  </div>
+  <ol class="anleitung">
+    <li><b>Fotografieren</b> – Artikel bei Tageslicht, 1–10 Fotos.</li>
+    <li><b>Prüfen</b> – KI-Entwurf ansehen, orange Felder korrigieren.</li>
+    <li><b>Übernehmen</b> – Fotos teilen/speichern, Kleinanzeigen öffnen, Felder kopieren und einfügen.</li>
+  </ol>
+  <div class="pick">
+    <label class="btn primary big" for="in-kamera">📷 Foto aufnehmen</label>
+    <input id="in-kamera" type="file" accept="image/*" capture="environment" hidden>
+    <label class="btn big" for="in-galerie">🖼️ Aus Galerie (bis 10)</label>
+    <input id="in-galerie" type="file" accept="image/*" multiple hidden>
+  </div>
+  <div id="thumbs" class="thumbs"></div>
+  <p class="small muted" id="foto-info">Fotos werden im Gerät verkleinert; Standort- und Kameradaten (EXIF/GPS) werden entfernt.</p>
+  <label class="lbl" for="in-plz">PLZ / Ort <span class="muted">(optional)</span></label>
+  <input id="in-plz" class="inp" inputmode="numeric" autocomplete="postal-code" placeholder="z. B. 40699 Erkrath">
+  <label class="lbl" for="in-hinweise">Hinweise für die KI <span class="muted">(optional)</span></label>
+  <textarea id="in-hinweise" class="inp" rows="3" placeholder="z. B. kaum benutzt, OVP dabei, funktioniert einwandfrei, Kratzer hinten"></textarea>
+  <button class="btn primary big" id="btn-erstellen" disabled>✨ Inserat erstellen</button>
+  <p class="small muted">Die Fotos gehen nur zur Analyse direkt an Google Gemini (mit deinem Key) – nicht an Kleinanzeigen und keinen anderen Server. Es wird nichts automatisch veröffentlicht.</p>
+</section>
+
+<!-- LADEN -->
+<section id="v-laden" class="view" hidden>
+  <div class="laden"><div class="spinner"></div><p id="laden-status">KI analysiert …</p><p class="small muted">Dauert meist 10–40 Sekunden.</p></div>
+</section>
+
+<!-- ERGEBNIS -->
+<section id="v-ergebnis" class="view" hidden>
+  <div id="erg-warnungen"></div>
+  <div id="erg-fotos" class="thumbs small-thumbs"></div>
+  <div class="actions sticky">
+    <button class="btn primary" id="btn-alles">📋 Alles kopieren</button>
+    <button class="btn" id="btn-teilen">📤 Teilen</button>
+    <button class="btn" id="btn-fotos">💾 Fotos speichern</button>
+    <a class="btn ka" id="btn-ka" href="#" target="_blank" rel="noopener noreferrer">↗ Kleinanzeigen öffnen</a>
+  </div>
+  <div id="erg-felder"></div>
+  <div id="erg-tipps"></div>
+  <ol class="anleitung small">
+    <li><b>Fotos</b>: „Teilen“ → Kleinanzeigen-App wählen oder „Fotos speichern“ → in der App aus der Galerie hinzufügen.</li>
+    <li><b>Kleinanzeigen öffnen</b> → „Anzeige aufgeben“, Kategorie wie unten wählen.</li>
+    <li><b>Felder kopieren</b> (📋 je Feld) und in der App einfügen, Angaben prüfen, dann selbst veröffentlichen.</li>
+  </ol>
+  <p class="small muted" id="erg-meta"></p>
+  <button class="btn big" id="btn-neu">➕ Neues Inserat</button>
+</section>
+
+<!-- VERLAUF -->
+<section id="v-verlauf" class="view" hidden>
+  <h2>Letzte Entwürfe</h2>
+  <p class="small muted">Nur auf diesem Gerät gespeichert (max. 20).</p>
+  <div id="verlauf-liste"></div>
+</section>
+
+<!-- EINSTELLUNGEN -->
+<section id="v-einstellungen" class="view" hidden>
+  <h2>Einstellungen</h2>
+  <div class="card">
+    <label class="lbl" for="in-key">Dein Gemini-API-Key</label>
+    <div class="row">
+      <input id="in-key" class="inp" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="AIza…">
+      <button class="btn" id="btn-key-zeigen" type="button" aria-label="Key anzeigen">👁</button>
+    </div>
+    <p class="small" id="key-status"></p>
+    <div class="row">
+      <button class="btn primary" id="btn-key-speichern">Speichern</button>
+      <button class="btn" id="btn-key-testen">Testen</button>
+      <button class="btn danger" id="btn-key-loeschen">Löschen</button>
+    </div>
+    <p class="small">So bekommst du einen Key: <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">aistudio.google.com/apikey</a> öffnen, mit Google-Konto anmelden, „API-Schlüssel erstellen“, kopieren und hier einfügen.</p>
+    <p class="small muted">🔒 Der Key bleibt nur in diesem Browser auf diesem Gerät (localStorage). Er wird nirgends hochgeladen außer bei jeder Analyse direkt an Google (generativelanguage.googleapis.com). Teile den Key mit niemandem. Im kostenlosen Kontingent kann Google Eingaben zur Verbesserung seiner Dienste nutzen – keine Fotos mit Personen oder privaten Dokumenten verwenden.</p>
+  </div>
+  <div class="card">
+    <label class="lbl" for="in-modell">KI-Modell</label>
+    <select id="in-modell" class="inp"></select>
+    <p class="small muted">Bei Überlastung (503) oder erschöpftem Kontingent (429) wechselt die App automatisch auf Gemini 3.5 Flash.</p>
+    <label class="lbl" for="in-plz-standard">Standard-PLZ / Ort</label>
+    <input id="in-plz-standard" class="inp" inputmode="numeric" placeholder="z. B. 40699 Erkrath">
+    <button class="btn" id="btn-einst-speichern">Speichern</button>
+  </div>
+  <div class="card">
+    <button class="btn danger" id="btn-verlauf-loeschen">Verlauf löschen</button>
+    <p class="small muted">Foto-Inserat ist kein Angebot von Kleinanzeigen. Keine Anmeldung, keine automatische Veröffentlichung – du übernimmst den Entwurf selbst in die Kleinanzeigen-App. <span id="version"></span></p>
+  </div>
+</section>
+</main>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<script type="module" src="app.js"></script>
+</body>
+</html>

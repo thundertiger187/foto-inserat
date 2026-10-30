@@ -1,0 +1,86 @@
+{
+  "fall": {
+    "id": "foto1_controller",
+    "dateien": [
+      "testfotos/foto1_controller.jpg"
+    ],
+    "plz": "40699 Erkrath",
+    "hinweise": "funktioniert einwandfrei, kabelgebunden, kaum benutzt"
+  },
+  "gesamt_ms_im_browser": 91517,
+  "ergebnis": {
+    "mehrere_artikel": false,
+    "artikel_hinweis": "",
+    "titel": "Microsoft Xbox 360 Controller Schwarz Gamepad",
+    "kategorie": "Elektronik",
+    "unterkategorie": "Konsolen",
+    "zustand": "Sehr Gut",
+    "preis": 18,
+    "preisart": "VB",
+    "preis_min": 15,
+    "preis_max": 25,
+    "preis_begruendung": "Xbox 360 Controller in sehr gutem Zustand erzielen gebraucht üblicherweise zwischen 15 und 25 Euro.",
+    "attribute": [
+      {
+        "name": "Marke",
+        "wert": "Microsoft",
+        "unsicher": false
+      },
+      {
+        "name": "Modell",
+        "wert": "Xbox 360 Controller",
+        "unsicher": false
+      },
+      {
+        "name": "Farbe",
+        "wert": "Schwarz",
+        "unsicher": false
+      },
+      {
+        "name": "Konnektivität",
+        "wert": "Kabelgebunden",
+        "unsicher": false
+      },
+      {
+        "name": "Plattform",
+        "wert": "Microsoft Xbox 360, PC",
+        "unsicher": true
+      }
+    ],
+    "beschreibung": "Verkaufe einen originalen Microsoft Xbox 360 Controller in Schwarz.\n\nDer Controller befindet sich in einem sehr guten Zustand, wurde kaum benutzt und funktioniert einwandfrei. Die Sticks und Tasten sind nicht abgegriffen.\n\nLieferumfang: Xbox 360 Controller mit festem Kabel.\n\nAbholung in 40699 Erkrath bevorzugt, Versand ist bei Kostenübernahme ebenfalls möglich.\n\nPrivatverkauf, keine Garantie oder Rücknahme.",
+    "versand": "Versand möglich",
+    "versand_hinweis": "Versand als Paket/Päckchen für ca. 4–6 € möglich oder Abholung in 40699 Erkrath.",
+    "unsicher": [
+      {
+        "feld": "attribute",
+        "grund": "PC-Kompatibilität ist üblich für kabelgebundene Xbox 360 Controller, aber nicht explizit genannt"
+      }
+    ],
+    "foto_tipps": [
+      "Ein Foto vom Typenschild/Rückseite machen, um die genaue Modellnummer zu zeigen.",
+      "Das Kabel inklusive USB-Stecker auf einem zusätzlichen Foto abbilden."
+    ]
+  },
+  "meta": {
+    "modell": "gemini-3.8-flash",
+    "ms": 91108,
+    "versuche": 1,
+    "fehler": [],
+    "tokens": {
+      "promptTokenCount": 2438,
+      "candidatesTokenCount": 549,
+      "totalTokenCount": 2987,
+      "promptTokensDetails": [
+        {
+          "modality": "IMAGE",
+          "tokenCount": 1102
+        },
+        {
+          "modality": "TEXT",
+          "tokenCount": 1336
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  }
+}
