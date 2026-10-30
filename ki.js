@@ -7,6 +7,7 @@ export const MODELLE = [
   { id: 'gemini-3.5-flash-lite', name: 'Gemini 3.5 Flash-Lite (schnell, ungenauer)' }
 ];
 export const FALLBACK = 'gemini-3.5-flash';
+const TIMEOUT_MS = 75000; // je Versuch; Gemini hängt bei Überlast manchmal minutenlang
 const FELDER = ['titel', 'kategorie', 'unterkategorie', 'zustand', 'preis', 'attribute', 'beschreibung', 'versand'];
 
 export const SCHEMA = {
@@ -109,12 +110,20 @@ export async function analysiere({ apiKey, modell, images, hinweise, plz, onStat
     onStatus(i === 0 ? `KI analysiert (${m}) …` : `Neuer Versuch mit ${m} …`);
     const t0 = performance.now();
     let res, txt;
+    const ac = new AbortController(), timer = setTimeout(() => ac.abort(), TIMEOUT_MS);
     try {
       res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent`, {
-        method: 'POST', headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey }, body: JSON.stringify(body)
+        method: 'POST', headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey }, body: JSON.stringify(body), signal: ac.signal
       });
       txt = await res.text();
-    } catch (e) { letzter = new KiFehler('Keine Verbindung zur KI (Internet prüfen).'); fehler.push(`${m}: Netzwerkfehler`); continue; }
+    } catch (e) {
+      const zeit = e.name === 'AbortError';
+      letzter = new KiFehler(zeit ? 'Die KI hat nicht rechtzeitig geantwortet (überlastet). Bitte gleich nochmal versuchen.' : 'Keine Verbindung zur KI (Internet prüfen).');
+      fehler.push(`${m}: ${zeit ? `Zeitüberschreitung nach ${TIMEOUT_MS / 1000} s` : 'Netzwerkfehler'}`);
+      // nach Zeitüberschreitung direkt zum Ausweichmodell
+      if (zeit && m !== FALLBACK) while (i + 1 < plan.length && plan[i + 1] !== FALLBACK) i++;
+      continue;
+    } finally { clearTimeout(timer); }
     const ms = Math.round(performance.now() - t0);
     if (!res.ok) {
       let msg = ''; try { msg = JSON.parse(txt).error.message; } catch { msg = txt.slice(0, 200); }

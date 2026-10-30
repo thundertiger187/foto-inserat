@@ -1,5 +1,5 @@
 // Offline-Hülle der App. KI-Anfragen (googleapis.com) werden nie zwischengespeichert.
-const CACHE = 'foto-inserat-v1';
+const CACHE = 'foto-inserat-v2';
 const DATEIEN = ['./', 'index.html', 'style.css', 'app.js', 'ki.js', 'kategorien.js', 'manifest.webmanifest',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable-512.png', 'icons/apple-touch-icon.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(DATEIEN))); self.skipWaiting(); });

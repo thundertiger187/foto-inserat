@@ -7,7 +7,7 @@
     "plz": "40699 Erkrath",
     "hinweise": "funktioniert einwandfrei, kabelgebunden, kaum benutzt"
   },
-  "gesamt_ms_im_browser": 91517,
+  "gesamt_ms_im_browser": 6360,
   "ergebnis": {
     "mehrere_artikel": false,
     "artikel_hinweis": "",
@@ -19,7 +19,7 @@
     "preisart": "VB",
     "preis_min": 15,
     "preis_max": 25,
-    "preis_begruendung": "Xbox 360 Controller in sehr gutem Zustand erzielen gebraucht üblicherweise zwischen 15 und 25 Euro.",
+    "preis_begruendung": "Xbox 360 Controller in gepflegtem, kaum benutztem Zustand erzielen üblicherweise 15 bis 25 Euro.",
     "attribute": [
       {
         "name": "Marke",
@@ -37,39 +37,39 @@
         "unsicher": false
       },
       {
-        "name": "Konnektivität",
-        "wert": "Kabelgebunden",
-        "unsicher": false
-      },
-      {
         "name": "Plattform",
         "wert": "Microsoft Xbox 360, PC",
         "unsicher": true
+      },
+      {
+        "name": "Konnektivität",
+        "wert": "Kabelgebunden",
+        "unsicher": false
       }
     ],
-    "beschreibung": "Verkaufe einen originalen Microsoft Xbox 360 Controller in Schwarz.\n\nDer Controller befindet sich in einem sehr guten Zustand, wurde kaum benutzt und funktioniert einwandfrei. Die Sticks und Tasten sind nicht abgegriffen.\n\nLieferumfang: Xbox 360 Controller mit festem Kabel.\n\nAbholung in 40699 Erkrath bevorzugt, Versand ist bei Kostenübernahme ebenfalls möglich.\n\nPrivatverkauf, keine Garantie oder Rücknahme.",
+    "beschreibung": "Verkaufe einen originalen Microsoft Xbox 360 Controller in Schwarz.\n\nDer Controller wurde kaum benutzt und befindet sich daher in einem sehr guten, gepflegten Zustand. Er funktioniert einwandfrei.\n\nLieferumfang:\n- Xbox 360 Controller (kabelgebunden)\n\nAbholung in 40699 Erkrath bevorzugt, versicherter Versand gegen Kostenübernahme ebenfalls möglich.\n\nPrivatverkauf, keine Garantie oder Rücknahme.",
     "versand": "Versand möglich",
-    "versand_hinweis": "Versand als Paket/Päckchen für ca. 4–6 € möglich oder Abholung in 40699 Erkrath.",
+    "versand_hinweis": "Versand als Paket oder Päckchen möglich (ca. 4,50–5,50 € Aufpreis) oder Barzahlung bei Abholung in 40699 Erkrath.",
     "unsicher": [
       {
         "feld": "attribute",
-        "grund": "PC-Kompatibilität ist üblich für kabelgebundene Xbox 360 Controller, aber nicht explizit genannt"
+        "grund": "Auf dem Foto ist das Kabel oder das Batteriefach auf der Rückseite nicht vollständig sichtbar, Angabe zur Kabelgebundenheit stammt vom Verkäufer."
       }
     ],
     "foto_tipps": [
-      "Ein Foto vom Typenschild/Rückseite machen, um die genaue Modellnummer zu zeigen.",
-      "Das Kabel inklusive USB-Stecker auf einem zusätzlichen Foto abbilden."
+      "Ein Foto der Rückseite / Typenschilds ergänzen",
+      "Das Kabel bzw. den Anschlussstecker auf einem Foto zeigen"
     ]
   },
   "meta": {
     "modell": "gemini-3.8-flash",
-    "ms": 91108,
+    "ms": 5897,
     "versuche": 1,
     "fehler": [],
     "tokens": {
       "promptTokenCount": 2438,
-      "candidatesTokenCount": 549,
-      "totalTokenCount": 2987,
+      "candidatesTokenCount": 614,
+      "totalTokenCount": 3052,
       "promptTokensDetails": [
         {
           "modality": "IMAGE",

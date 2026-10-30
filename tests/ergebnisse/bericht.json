@@ -1,17 +1,17 @@
 {
-  "zeit": "2026-10-30T11:53:51.032Z",
-  "basis": "http://127.0.0.1:8787/",
+  "zeit": "2026-10-30T11:58:40.962Z",
+  "basis": "https://thundertiger187.github.io/foto-inserat/",
   "faelle": [
     {
       "id": "foto1_controller",
-      "ms": 91517,
+      "ms": 6360,
       "modell": "gemini-3.8-flash",
       "versuche": 1,
       "api_fehler": [],
       "tokens": {
         "promptTokenCount": 2438,
-        "candidatesTokenCount": 549,
-        "totalTokenCount": 2987,
+        "candidatesTokenCount": 614,
+        "totalTokenCount": 3052,
         "promptTokensDetails": [
           {
             "modality": "IMAGE",
@@ -38,83 +38,6 @@
       ],
       "privat_hinweis": true,
       "kopieren_titel_ok": true
-    },
-    {
-      "id": "foto2_lichtmaschine_regler",
-      "ms": 31585,
-      "modell": "gemini-3.8-flash",
-      "versuche": 1,
-      "api_fehler": [],
-      "tokens": {
-        "promptTokenCount": 2389,
-        "candidatesTokenCount": 757,
-        "totalTokenCount": 3146,
-        "promptTokensDetails": [
-          {
-            "modality": "IMAGE",
-            "tokenCount": 1064
-          },
-          {
-            "modality": "TEXT",
-            "tokenCount": 1325
-          }
-        ],
-        "serviceTier": "standard"
-      },
-      "titel": "Bosch Lichtmaschinenregler 1 197 311 021 EL 14V 4C Regler",
-      "titel_laenge": 57,
-      "kategorie": "Auto, Rad & Boot > Autoteile & Reifen",
-      "zustand": "In Ordnung",
-      "preis": "10 € VB",
-      "spanne": "5–15 €",
-      "versand": "Versand möglich",
-      "mehrere_artikel": false,
-      "artikel_hinweis": "",
-      "unsicher": [
-        "zustand",
-        "preis"
-      ],
-      "privat_hinweis": true,
-      "kopieren_titel_ok": true
-    },
-    {
-      "id": "foto3_bonsaischalen",
-      "ms": 49228,
-      "modell": "gemini-3.8-flash",
-      "versuche": 2,
-      "api_fehler": [
-        "gemini-3.8-flash: HTTP 503"
-      ],
-      "tokens": {
-        "promptTokenCount": 2402,
-        "candidatesTokenCount": 722,
-        "totalTokenCount": 3124,
-        "promptTokensDetails": [
-          {
-            "modality": "TEXT",
-            "tokenCount": 1329
-          },
-          {
-            "modality": "IMAGE",
-            "tokenCount": 1073
-          }
-        ],
-        "serviceTier": "standard"
-      },
-      "titel": "Bonsaischalen 7 Stück Set Keramik Ton Pflanzschalen",
-      "titel_laenge": 51,
-      "kategorie": "Haus & Garten > Gartenzubehör & Pflanzen",
-      "zustand": "Gut",
-      "preis": "35 € VB",
-      "spanne": "25–50 €",
-      "versand": "Versand möglich",
-      "mehrere_artikel": true,
-      "artikel_hinweis": "7 Bonsaischalen in unterschiedlichen Formen, Farben und Größen. Verkauf als Gesamtpaket oder einzeln möglich; hier als Set angeboten.",
-      "unsicher": [
-        "preis"
-      ],
-      "privat_hinweis": true,
-      "kopieren_titel_ok": true
     }
   ],
   "checks": {
@@ -127,15 +50,12 @@
         1209
       ],
       "bytes": 205540
-    },
-    "verlauf_eintraege": 3,
-    "key_in_ergebnisdateien": false
+    }
   },
+  "abbruch": "page.waitForSelector: Timeout 300000ms exceeded.\nCall log:\n  - waiting for locator('#v-ergebnis:not([hidden]), #v-start .banner.err') to be visible\n",
   "browser_logs": [
     "verbose: [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o",
     "verbose: [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o",
-    "verbose: [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o",
-    "verbose: [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o",
-    "error: Failed to load resource: the server responded with a status of 503 ()"
+    "verbose: [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o"
   ]
 }

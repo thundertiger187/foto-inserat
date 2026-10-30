@@ -61,7 +61,7 @@ try {
     if (f.id === 'foto1_controller') await shot(page, '02_start_mit_foto.png');
     const t0 = Date.now();
     await page.click('#btn-erstellen');
-    await page.waitForSelector('#v-ergebnis:not([hidden]), #v-start .banner.err', { timeout: 300000 });
+    await page.waitForSelector('#v-ergebnis:not([hidden]), #v-start .banner.err', { timeout: 420000 });
     const ms = Date.now() - t0;
     const fehler = await page.$eval('#v-start .banner.err', e => e.textContent).catch(() => null);
     if (fehler) { bericht.faelle.push({ id: f.id, fehler, ms }); await shot(page, `fehler_${f.id}.png`); continue; }
